@@ -1,8 +1,8 @@
 """GGUF v3 binary-format reader (read-only, lazy, clean-room).
 
-Copied from GREGORY gregory/gguf.py. drock uses it to inspect models
-(architecture, context length, weight bytes -> bytes moved per token)
-without loading them; the fix here closes the mmap on a bad version.
+First written for Gregory, an earlier inference project by the same author.
+It inspects a model (architecture, context length, tensor table) without
+loading it, and closes the mmap when the version is not one it reads.
 
 Format spec: https://github.com/ggerganov/ggml/blob/master/docs/gguf.md
 
